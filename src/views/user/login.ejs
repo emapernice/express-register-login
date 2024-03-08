@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+<%- include('../partials/head', { pageTitle: 'Login', styles: ['main']}) %>
+</head>
+<body>
+	<%- include('../partials/headerLog'); %>
+	<main>
+		<div class="container-users">
+			<h2>Sign in</h2>
+
+			<form class="form-login" method="POST" action="/user/login">
+
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" autocomplete="off" />
+				<% if(locals.errors?.email) { %>
+					<p class="error-message"><%= errors.email.msg %></p> 
+				<% } %>
+				<br>
+
+				<label for="password">Password</label>
+				<input type="password" id="password" name="password" >
+				<br>
+					
+				<div>
+					<button type="submit" class="btn-primary">Sign In</button>
+				</div>
+
+				<input type="checkbox" name="remember_user"><span class="check">Keep me signed in.</span>
+
+			</form>
+
+			<div class="container-footer">
+				<p>By continuing, you agree to Brand's Conditions of Use and Privacy Notice. </p>
+				<div class="link"><p>New to Brand?</p><a href="/user/register">Create your Brand account</a></div>
+			</div>	
+		</div>	
+	</main>
+	<%- include('../partials/footer'); %>
+</body>
+</html>

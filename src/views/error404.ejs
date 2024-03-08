@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', { pageTitle: '¡We have an ERROR!', styles: ['main']}); %>
+<body>
+    <div class="error">
+        <h1><%= message %></h1>
+        <h2><%= error.status %></h2>
+        <p>Error trying to access to: <b><%= path %></b></p>
+        <pre><i><%= error.stack %></i></pre>
+    </div>
+</body>
+</html>

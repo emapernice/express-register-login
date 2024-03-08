@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head', { pageTitle: 'Login' , styles: ['main']}); %>
+
+	<body>
+		<%- include('../partials/header'); %>
+			<main>
+				<% if (locals.user) { %>
+					<section class="section-profile-user">
+							<div class="profile-user-frontPage">
+								<div class="profile-user-avatar">
+									<img src="/images/avatars/<%= user.avatar %> " alt="img-avatar">
+								</div>
+							</div>
+						<div class="profile-user-body">
+							<div class="profile-user-bio">
+								<h3 class="titulo">
+									<%= user.fullName %>
+								</h3>
+								<p class="texto">
+									<%= user.email %>
+								</p>
+							</div>
+							<div class="profile-user-footer">
+								<ul class="list-data">
+									<li><i class="icono fas fa-map-signs"></i> Address</li>
+									<li><i class="icono fas fa-phone-alt"></i> Phone</li>
+									<li><i class="icono fas fa-briefcase"></i> Works at.</li>
+									<li><i class="icono fas fa-building"></i> Position</li>
+								</ul>
+								<ul class="list-data">
+									<li><i class="icono fas fa-map-marker-alt"></i> Location</li>
+									<li><i class="icono fas fa-calendar-alt"></i> Birth Date</li>
+									<li><i class="icono fas fa-user-check"></i> Record</li>
+									<li><i class="icono fas fa-share-alt"></i> Social Networks</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+					<% } %>
+			</main>
+			<%- include('../partials/footer'); %>
+	</body>
+
+</html>

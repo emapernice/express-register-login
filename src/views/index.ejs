@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head', { pageTitle: 'Home' , styles: ['main']}); %>
+
+	<body>
+		<%- include('partials/header'); %>
+    <main>
+        <div class="section-index">
+            <div class="container-carousel">
+                <div class="carruseles" id="slider">
+                    <section class="slider-section">
+                        <img src="/images/img-banner-01.png">
+                    </section>
+                    <section class="slider-section">
+                        <img src="/images/img-banner-02.jpg">
+                    </section>
+                    <section class="slider-section">
+                        <img src="/images/img-banner-03.png">
+                    </section>
+                </div>
+                <div class="btn-left"><i class='fas fa-chevron-left'></i></div>
+                <div class="btn-right"><i class='fas fa-chevron-right'></i></div>
+            </div>
+        </div>
+    </main>
+    <%- include('partials/footer'); %>
+    <%- include('partials/scripts'); %>
+</body>
+
+</html>

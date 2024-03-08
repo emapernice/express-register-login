@@ -1,0 +1,32 @@
+
+    <nav>
+      <ul class="menu">
+        <li class="logo"><a href="/">BRAND</a></li>
+        <li class="item"><a href="/">Home</a></li>
+        <li class="item"><a href="#">About</a></li>
+        <li class="item"><a href="#">Contact</a></li>
+        <li class="item button"><a href="/user/<%= locals.isLogged ? 'profile' : 'login' %>">
+			<%= locals.isLogged ? 'Profile' : 'Log In' %></a>
+		</li>
+		<li class="item button secondary"><a href="/user/<%= locals.isLogged ? 'logout' : 'register' %>">
+			<%= locals.isLogged ? 'Log Out' : 'Sign Up' %></a>
+		</li>
+        <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+      </ul>
+    </nav>
+  
+    <script>
+      const toggle = document.querySelector(".toggle");
+      const menu = document.querySelector(".menu");
+      function toggleMenu() {
+        if (menu.classList.contains("active")) {
+          menu.classList.remove("active");
+          toggle.querySelector("a").innerHTML = "<i class='fas fa-bars'></i>";
+        } else {
+          menu.classList.add("active");
+          toggle.querySelector("a").innerHTML = "<i class='fas fa-times'></i>";
+        }
+      }
+      toggle.addEventListener("click", toggleMenu, false);
+      const items = document.querySelectorAll(".item");
+    </script>
